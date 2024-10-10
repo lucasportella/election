@@ -7,7 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "get",
+				"name": "getRole",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -34,12 +34,47 @@
 			{
 				"inputs": [
 					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "id",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint16",
+								"name": "voteNumber",
+								"type": "uint16"
+							},
+							{
+								"internalType": "string",
+								"name": "party",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Election.Candidate",
+						"name": "candidate",
+						"type": "tuple"
+					}
+				],
+				"name": "setCandidate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_role",
 						"type": "string"
 					}
 				],
-				"name": "set",
+				"name": "setRole",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -73,11 +108,11 @@
 	},
 	"sources": {
 		"contracts/Election.sol": {
-			"keccak256": "0x317728891129e1ab47d2f5f71bf333cc7d2cb792f94359af29d466d5038e4bee",
+			"keccak256": "0x9767f46ea430fb027df8a09b318cae6b18bdc9c876198194e350fa33eeb52ec2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://17ec441eac8154b76f8a69dad65c9f2d05e80d0573faa065f4978cec5cc00680",
-				"dweb:/ipfs/QmTuL23zJ87nzaa27CgfBW29QKjivTANpWphznFxzL8B2B"
+				"bzz-raw://b40bea730cf2c6421c2f93c5127e787597055321e206adef3799f5f2f05412b5",
+				"dweb:/ipfs/QmZSE47bQR116thKEXQW4U3E15YjJmuSz9sxeinxPB3BdC"
 			]
 		}
 	},
