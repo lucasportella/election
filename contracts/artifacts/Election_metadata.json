@@ -6,6 +6,86 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "candidates",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "id",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint16",
+						"name": "voteNumber",
+						"type": "uint16"
+					},
+					{
+						"internalType": "string",
+						"name": "party",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "voteNumber",
+						"type": "uint16"
+					}
+				],
+				"name": "getCandidateByNumber",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "id",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint16",
+								"name": "voteNumber",
+								"type": "uint16"
+							},
+							{
+								"internalType": "string",
+								"name": "party",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Election.Candidate",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getRole",
 				"outputs": [
@@ -78,6 +158,37 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "voteNumber",
+						"type": "uint16"
+					}
+				],
+				"name": "vote",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "result",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "error",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Election.VoteFeedBack",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -108,11 +219,11 @@
 	},
 	"sources": {
 		"contracts/Election.sol": {
-			"keccak256": "0x9767f46ea430fb027df8a09b318cae6b18bdc9c876198194e350fa33eeb52ec2",
+			"keccak256": "0x008c01f316fa6cd60b1d3e0af9076a58a1c7b64a27c568f2f8d89297f27ffaf8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b40bea730cf2c6421c2f93c5127e787597055321e206adef3799f5f2f05412b5",
-				"dweb:/ipfs/QmZSE47bQR116thKEXQW4U3E15YjJmuSz9sxeinxPB3BdC"
+				"bzz-raw://47a6b5c1b2a9676426083f7ad4ba9ce9ec1325e150fe3e62c03fa103a3e65a93",
+				"dweb:/ipfs/QmSKRw4w6J4pCJRCwztFyoTbgSk2V9UtNgiq4FNeKh7JBc"
 			]
 		}
 	},

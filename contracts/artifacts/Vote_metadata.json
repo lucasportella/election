@@ -4,27 +4,7 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "option",
-						"type": "string"
-					}
-				],
-				"name": "vote",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			}
-		],
+		"abi": [],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -53,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/Vote.sol": {
-			"keccak256": "0xb1c51b81653f3deed8a608495017fc27389d525a344707ba6d6b2e1344a3c68f",
+			"keccak256": "0xe4de8c76e9e839bd2b506bd639149c7e66d6f769043efe664d3525d1ad54d8c1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5c88689472fefce81fbbac42cffc4da02433e8e9e247c044ce827f8c6526cd7b",
-				"dweb:/ipfs/QmTR3p3kumAiBHxhBga6HTib1vSRugyED34cxBh7ebbkez"
+				"bzz-raw://0f00f9a36abca751cfae2afb1135eb87c43c835ae640d6278d44200cb31395ea",
+				"dweb:/ipfs/QmasK5uTBZkkQEcZ4VDdSG5wkjWiTJRi6uHtXZPFNFNkit"
 			]
 		}
 	},
