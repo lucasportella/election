@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.0+commit.c7dfd78e"
+		"version": "0.8.22+commit.4fc1097e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -26,14 +26,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint16",
-						"name": "voteNumber",
-						"type": "uint16"
-					},
-					{
 						"internalType": "string",
 						"name": "party",
 						"type": "string"
+					},
+					{
+						"internalType": "uint16",
+						"name": "voteNumber",
+						"type": "uint16"
 					}
 				],
 				"stateMutability": "view",
@@ -62,14 +62,14 @@
 								"type": "string"
 							},
 							{
-								"internalType": "uint16",
-								"name": "voteNumber",
-								"type": "uint16"
-							},
-							{
 								"internalType": "string",
 								"name": "party",
 								"type": "string"
+							},
+							{
+								"internalType": "uint16",
+								"name": "voteNumber",
+								"type": "uint16"
 							}
 						],
 						"internalType": "struct Election.Candidate",
@@ -80,6 +80,25 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "voteNumber",
+						"type": "uint16"
+					}
+				],
+				"name": "getCandidateVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -126,18 +145,13 @@
 								"type": "string"
 							},
 							{
-								"internalType": "uint16",
-								"name": "voteNumber",
-								"type": "uint16"
-							},
-							{
 								"internalType": "string",
 								"name": "party",
 								"type": "string"
 							}
 						],
-						"internalType": "struct Election.Candidate",
-						"name": "candidate",
+						"internalType": "struct Election.PreCandidate",
+						"name": "preCandidate",
 						"type": "tuple"
 					}
 				],
@@ -206,7 +220,7 @@
 		"compilationTarget": {
 			"contracts/Election.sol": "Election"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -219,11 +233,11 @@
 	},
 	"sources": {
 		"contracts/Election.sol": {
-			"keccak256": "0x008c01f316fa6cd60b1d3e0af9076a58a1c7b64a27c568f2f8d89297f27ffaf8",
+			"keccak256": "0x2f8c1da473dce9ab45cf782ddd6278b4790fa2da03980c5bdbbaf53e1232fc49",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://47a6b5c1b2a9676426083f7ad4ba9ce9ec1325e150fe3e62c03fa103a3e65a93",
-				"dweb:/ipfs/QmSKRw4w6J4pCJRCwztFyoTbgSk2V9UtNgiq4FNeKh7JBc"
+				"bzz-raw://983bcd45413efef92ba6fce9eacf43f7cfc3530201252ce12637367b0fd4d8a3",
+				"dweb:/ipfs/QmP7mnCbMapyfxaD4abE6GTjwbD6XqrSpYVpYjrKGNm4Y9"
 			]
 		}
 	},
