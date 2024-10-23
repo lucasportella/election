@@ -13,9 +13,13 @@ pragma solidity ^0.8.0;
 
 contract Election {
     string public role;
-    Candidate[] public candidates;
-    uint votesCount;
+    Candidate[] internal candidates;
     mapping (uint16 => CandidateVotes) internal candidatesVotes;
+
+    constructor(string memory _role) {
+        require(bytes(_role).length > 0, "Role is not defined.");
+        role = _role;
+    }
 
     struct PreCandidate {
         address id;
@@ -30,26 +34,20 @@ contract Election {
         uint16 voteNumber; 
     }
 
-struct CandidateVotes {
+    struct CandidateVotes {
     uint256 votes;
     uint16 voteNumber;
-}
-
+    }
 
     struct VoteFeedBack {
         bool result;
         string error;
     }
 
-    function setRole(string memory _role) public  {
-        require(bytes(role).length == 0, "Role is already defined.");
-        require(bytes(_role).length > 0, "Role is not defined.");
-        role = _role;
-    }
-
     function getRole() public view returns (string memory) {
         return role;
     }
+
 // precandidates
 // [0x154AD4c90D9979A912452D3055032b772339e463, "lucas", "pl"]
 // [0x6d2e03b7effeae98bd302a9f836d0d6ab0002766, "bob", "pp"]
@@ -57,9 +55,8 @@ struct CandidateVotes {
 
 // Candidate
 // [0x154AD4c90D9979A912452D3055032b772339e463, "lucas", "pl", 1]
-    function setCandidate(PreCandidate memory preCandidate) public {
+    function setCandidate(PreCandidate calldata preCandidate) public {
         require(candidateRegisterIsValid(preCandidate), "Candidate input is invalid,");
-        require(bytes(role).length > 0, "Role is not defined.");
         Candidate memory candidate;
         uint16 newVoteNumber = uint16(candidates.length + 1);
         candidate = Candidate( preCandidate.id, preCandidate.name, preCandidate.party, newVoteNumber);
@@ -67,7 +64,7 @@ struct CandidateVotes {
         candidatesVotes[newVoteNumber] = CandidateVotes(0, newVoteNumber);
     }
 
-    function candidateRegisterIsValid(PreCandidate memory preCandidate) internal view returns(bool)  {
+    function candidateRegisterIsValid(PreCandidate calldata preCandidate) internal view returns(bool)  {
         for (uint i = 0; i < candidates.length; i++) 
         {
             if (preCandidate.id == candidates[i].id) {
@@ -77,13 +74,12 @@ struct CandidateVotes {
             return true;
     }
 
-
-
-    function vote(uint16 voteNumber) public view returns(VoteFeedBack memory){
+    function vote(uint16 voteNumber) public returns(VoteFeedBack memory){
         (, bool found) = getCandidateByNumber(voteNumber);
         if (!found) {
             return VoteFeedBack(false, "Candidate not found!");
         }
+        candidatesVotes[voteNumber].votes += 1;
         return VoteFeedBack(true, "");
     }
 
@@ -102,8 +98,4 @@ struct CandidateVotes {
         require(candVotes.voteNumber != 0, "Candidate not found!");
         return candVotes.votes;
     }
-
-    // function computeVote(Candidate memory) internal returns (bool result) {
-    //     candidatesVotes
-    // }
 }
