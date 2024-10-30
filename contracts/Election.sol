@@ -2,23 +2,27 @@
 pragma solidity ^0.8.0;
 
 // todo:
-// 0- test contract interaction
-// 0.5- create roles data structure
-// 0.6- contract constructor
-// 1- compute vote
-// 2- add candidates into the election
-// 3- votes count 
 // 4- election result
-// 5- convert Candidate[] to mapping(uint16 => Candidate) ?
+// 5- election time threshold
+
 
 contract Election {
     string public role;
+    uint256 candidaciesInitialTimeStamp;
+    uint256 candidaciesFinalTimeStamp;
+    uint256 electionInitialTimeStamp;
+    uint256 electionFinalTimeStamp;
+
     Candidate[] internal candidates;
     mapping (uint16 => CandidateVotes) internal candidatesVotes;
 
-    constructor(string memory _role) {
+    constructor(string memory _role, uint256 _candidaciesInitialTimeStamp, uint256 _candidaciesFinalTimeStamp, uint256 _electionInitialTimeStamp, uint256 _electionFinalTimeStamp) {
         require(bytes(_role).length > 0, "Role is not defined.");
         role = _role;
+        candidaciesInitialTimeStamp = _candidaciesInitialTimeStamp;
+        candidaciesFinalTimeStamp = _candidaciesFinalTimeStamp;
+        electionInitialTimeStamp = _electionInitialTimeStamp;
+        electionFinalTimeStamp = _electionFinalTimeStamp;
     }
 
     struct PreCandidate {
@@ -98,4 +102,10 @@ contract Election {
         require(candVotes.voteNumber != 0, "Candidate not found!");
         return candVotes.votes;
     }
+
+
+    function getElectionResult () public view returns (mapping (uint16 => CandidateVotes) calldata candidateVotes) {
+        return candidatesVotes;
+    }
 }
+

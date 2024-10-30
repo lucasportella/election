@@ -8,36 +8,13 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "_role",
+						"type": "string"
 					}
 				],
-				"name": "candidates",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "id",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "party",
-						"type": "string"
-					},
-					{
-						"internalType": "uint16",
-						"name": "voteNumber",
-						"type": "uint16"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			},
 			{
 				"inputs": [
@@ -163,19 +140,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_role",
-						"type": "string"
-					}
-				],
-				"name": "setRole",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint16",
 						"name": "voteNumber",
 						"type": "uint16"
@@ -201,7 +165,7 @@
 						"type": "tuple"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -218,7 +182,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Election.sol": "Election"
+			"Documents/SOLIDITY/election/contracts/Election.sol": "Election"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -232,12 +196,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Election.sol": {
-			"keccak256": "0x2f8c1da473dce9ab45cf782ddd6278b4790fa2da03980c5bdbbaf53e1232fc49",
+		"Documents/SOLIDITY/election/contracts/Election.sol": {
+			"keccak256": "0x834be86fe21a33617a98de5ec842bed627f3cf358272dc8852ed284a03719fb6",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://983bcd45413efef92ba6fce9eacf43f7cfc3530201252ce12637367b0fd4d8a3",
-				"dweb:/ipfs/QmP7mnCbMapyfxaD4abE6GTjwbD6XqrSpYVpYjrKGNm4Y9"
+				"bzz-raw://ca879e59250617db6478ca3af2dbc1b1709ec706647e976e3a1f1d448450538c",
+				"dweb:/ipfs/QmRwmT1fozayFpMpj3xyYaq5CUvgbgY1KDy53A8Bjr6y8G"
 			]
 		}
 	},
